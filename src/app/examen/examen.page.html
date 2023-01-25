@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar slot="" color="primary">
+    <ion-button fill="clear" (click)="actionSheet()">
+      <ion-img src="../../assets/img/logo.png"></ion-img>
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-button (click)="actionSheet()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-text>
+  <h1>Pregunta Nro: {{numPregunta}}</h1>
+</ion-text>
+<ion-content>
+    <ng-container *ngFor="let op of opciones">
+      <div class="container-pregunta" *ngIf="op.id === numPregunta">
+        <article>
+          <ion-textarea>{{op.enunciado}}</ion-textarea>
+          <ion-radio-group value="checked">
+            <ion-item lines="none">
+              <ion-radio value="checked"></ion-radio>
+              <ion-label>{{op.op1}}</ion-label>
+            </ion-item>
+              <ion-item lines="none">
+                <ion-radio value="op2"></ion-radio>
+                <ion-label>{{op.op2}}</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-radio value="op3"></ion-radio>
+                <ion-label>{{op.op3}}</ion-label>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-radio value="op4"></ion-radio>
+                <ion-label>{{op.op4}}</ion-label>
+              </ion-item>
+          </ion-radio-group>
+        </article>
+      </div>
+    </ng-container>
+    <ion-buttons class="btn-examen">
+      <ion-button slot="start"expand="block" [disabled]="(numPregunta===1)?true:false" (click)="numPregunta=numPregunta-1">Anterior</ion-button>
+      <ion-button slot="end" expand="block" (click)="sigPregunta()" [fill]="(numPregunta===opciones.length)?'solid':'clear'" [color]="(numPregunta===opciones.length)?'success':''" >{{(numPregunta===opciones.length)?"Finalizar Examen":"Siguiente"}}</ion-button>
+    </ion-buttons>
+</ion-content>

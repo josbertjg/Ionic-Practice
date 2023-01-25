@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>linterna</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/home']"><ion-icon name="arrow-back-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-text>
+    <h5>Presiona para Interactuar con la linterna</h5>
+  </ion-text>
+  <div (click)="switchLinterna($event)" class="form-check form-switch">
+    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+  </div>
+</ion-content>

@@ -1,0 +1,69 @@
+ion-img{
+  height: 2rem;
+  display: flex;
+  justify-content: start;
+  img{
+    align-self: flex-start;
+  }
+}
+.container-pregunta{
+  padding: 1rem;
+}
+ion-text{
+  color: white;
+  margin-left: 1rem;
+}
+ion-textarea{
+  background-color: white;
+  border: 2px solid grey;
+  color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.btn-examen{
+  display: flex;
+  justify-content: center;
+  & ion-button:first-child{
+    color: white;
+    border-radius: 10px;
+    background-color: grey;
+  }
+  & ion-button:last-child{
+    background-color: rgb(245, 208, 0);
+    color: black;
+    border-radius: 10px;
+  }
+}
+ion-radio {
+  width: 30px;
+  height: 30px;
+}
+
+ion-radio::part(container) {
+  border-radius: 100px;
+  border: 2px solid #ddd;
+}
+
+ion-radio::part(mark) {
+  background: none;
+  transition: none;
+  transform: none;
+  border-radius: 0;
+}
+
+ion-radio.radio-checked::part(container) {
+  background: rgb(77, 124, 255);
+  border-color: transparent;
+}
+
+ion-radio.radio-checked::part(mark) {
+  width: 6px;
+  height: 10px;
+
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-color: #fff;
+
+  transform: rotate(45deg);
+}
